@@ -33,7 +33,7 @@ namespace WebApiContrib.Formatting.ServiceStack.Tests
             var dehydrated = Serialise(formatter, value);
 
             // deserialise from dehydrated string
-            var rehydrated = Deserialise<LocalDateTimeContainer>(formatter, dehydrated);
+            var rehydrated = Deserialise<LocalDateTimeContainer>(formatter, dehydrated); // the dates as returned by deserialise are incorrect.
 
             rehydrated.DateTime.ShouldEqual(value.DateTime);
             rehydrated.OffsetDateTime.ShouldEqual(value.OffsetDateTime);
